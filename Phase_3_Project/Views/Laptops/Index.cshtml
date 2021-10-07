@@ -1,0 +1,60 @@
+﻿@model IEnumerable<project3.Models.TblLaptops>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Laptop List</h1>
+
+<p>
+    <a asp-action="Create">Add New Laptop</a>
+</p>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a asp-controller="home" asp-action="index"><button class="btn btn-danger" type="button">Logout</button> </a>
+</div>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LaptopId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LaptopName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LaptopImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LaptopPrice)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaptopId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaptopName)
+            </td>
+            <td>
+               <img src="@item.LaptopImage" height="100px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaptopPrice)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LaptopId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LaptopId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LaptopId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

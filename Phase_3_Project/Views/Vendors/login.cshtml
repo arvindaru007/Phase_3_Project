@@ -1,0 +1,43 @@
+﻿@model project3.Models.TblVendors;
+
+
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h4>Vendor Login</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VendorUname" class="control-label"></label>
+                <input asp-for="VendorUname" class="form-control" />
+                <span asp-validation-for="VendorUname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendorPwd" class="control-label"></label>
+                <input asp-for="VendorPwd" class="form-control" />
+                <span asp-validation-for="VendorPwd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+        <b>@ViewBag.msg</b>
+    </div>
+</div>
+
+<p>
+    <a asp-action="Create"> New User ? Register... </a>
+</p>
+<br />
+<hr />
+
+<a asp-controller="Home" asp-action="index">Back to index</a>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

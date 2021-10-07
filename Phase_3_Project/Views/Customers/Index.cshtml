@@ -1,0 +1,54 @@
+﻿@model IEnumerable<project3.Models.TblCustomers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Registered Customers</h1>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a asp-controller="home" asp-action="index"><button class="btn btn-danger" type="button">Logout</button> </a>
+</div>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerUname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerEmail)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerUname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerEmail)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.CustomerId">Details</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

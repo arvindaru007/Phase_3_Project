@@ -1,0 +1,61 @@
+﻿<h1>Order Confirmation View</h1>
+
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div class="form-group">
+                    <label for="Name" class="control-label">Name</label>
+                    <input name="Name" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="Address" class="control-label">Address</label>
+                    <input name="Address" class="form-control" type="text" />
+                </div>
+                <div class="form-group">
+                    <label for="Phone No." class="control-label">Phone No.</label>
+                    <input name="Phone No." class="form-control" type="number" />
+                </div>
+                <div class="form-group">
+                    <label for="CardNo." class="control-label">Card Number</label>
+                    <input name="CardNo." class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="CVV" class="control-label">CVV</label>
+                    <input name="CVV" class="form-control" type="password" />
+                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="b1">
+                    Confirm Order
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Order Confirmed Successfully</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 style="color:chartreuse">Happy Shopping...!</h1>
+                </div>
+                <div class="modal-footer">
+                    <a asp-action="index" asp-controller="home">  <button type="button" class="btn btn-block" data-bs-dismiss="modal">Close</button></a>
+</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a asp-action="laptop_list">Changed your mind?</a>
+    </div>
+</body>

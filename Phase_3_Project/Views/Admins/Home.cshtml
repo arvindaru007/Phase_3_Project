@@ -1,0 +1,25 @@
+﻿<style>
+    body {
+        background-image: url('https://www.secureaplus.com/wp-content/uploads/2016/03/SecureAPlus-HomePage-Background.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .btns {
+        position: relative;
+        padding-top: 25%;
+    }
+
+</style>
+
+<body>
+    <div class=" text-center ">
+        <div class="btns">
+            <a asp-controller="laptops" asp-action="index"> <button mdbRipple type="button" class="btn btn-light btn-lg mr-5"> Laptop </button></a>
+            <a asp-controller="customers" asp-action="index"> <button mdbRipple type="button" class="btn btn-light btn-lg mr-5"> Customer</button> </a>
+            <a asp-controller="vendors" asp-action="index"> <button mdbRipple type="button" class="btn btn-light btn-lg"> Vendor</button> </a>
+        </div>
+    </div>
+
+</body>

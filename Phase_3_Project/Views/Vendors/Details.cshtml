@@ -1,0 +1,48 @@
+﻿@model project3.Models.TblVendors
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TblVendors</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VendorUname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VendorUname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VendorPwd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VendorPwd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VendorName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VendorName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VendorLoc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VendorLoc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VendorPhno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VendorPhno)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VendorId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

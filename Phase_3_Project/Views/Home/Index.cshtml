@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body {
+        background-image: url('https://www.secureaplus.com/wp-content/uploads/2016/03/SecureAPlus-HomePage-Background.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .btns {
+        position: relative;
+        padding-top: 25%;
+    }
+</style>
+<body>
+    <div class=" text-center ">
+        <div class="btns">
+            <a asp-controller="admins" asp-action="login">
+            <button mdbRipple type="button" class="btn btn-light btn-lg mr-5"> Admin Login </button></a>
+            <a asp-controller="customers" asp-action="login">
+            <button mdbRipple type="button" class="btn btn-light btn-lg mr-5"> Customer Login</button></a>
+            <a asp-controller="vendors" asp-action="login">  
+            <button mdbRipple type="button" class="btn btn-light btn-lg"> Vendor Login</button></a>
+</div>
+    </div>
+</body>

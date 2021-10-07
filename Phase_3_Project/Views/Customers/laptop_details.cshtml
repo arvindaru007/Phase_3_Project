@@ -1,0 +1,42 @@
+﻿@model project3.Models.TblLaptops
+
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<h1>Laptop Specifications</h1>
+
+
+
+<div>
+    <h4>TblLaptops</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LaptopName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LaptopName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LaptopImage)
+        </dt>
+        <dd class="col-sm-10">
+            @* @Html.DisplayFor(model => model.LaptopImage)*@
+            <img src="@Model.LaptopImage" height="100px" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LaptopPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LaptopPrice)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="laptop_list">Back to Home</a>
+</div>

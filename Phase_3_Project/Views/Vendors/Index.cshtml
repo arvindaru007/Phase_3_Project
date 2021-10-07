@@ -1,0 +1,61 @@
+﻿@model IEnumerable<project3.Models.TblVendors>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Registered Vendors</h1>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a asp-controller="home" asp-action="index"><button class="btn btn-danger" type="button">Logout</button> </a>
+</div>
+<br/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorUname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorLoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorPhno)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorUname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorLoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorPhno)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.VendorId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VendorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<project3.Models.TblLaptops>
+
+
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a asp-controller="home" asp-action="index"><button class="btn btn-danger" type="button">Logout</button> </a>
+</div>
+
+@{ ViewData["Title"] = "Index"; }
+<div class="card-deck">
+    @foreach (var item in Model)
+    {
+        <div class="card m-3" style="min-width: 18rem; max-width:30.5%;">
+            <div class="card-header">
+                <h3>@item.LaptopName</h3>
+            </div>
+            <img class="card-img-top" src="@item.LaptopImage" alt="Laptop Image" height="200px" />
+            @*<a href="@item.LaptopImage"> Show Image</a>*@
+        <div class="card-footer text-center">
+            <a asp-action="laptop_details" asp-route-id="@item.LaptopId" class="btn btn-info">Details</a>
+            <a asp-action="order_cart" asp-route-id="@item.LaptopId" class="btn btn-primary">Add to Cart</a>
+        </div>
+        </div>}
+</div>
